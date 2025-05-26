@@ -14,7 +14,7 @@ const app = express();
 
 // CORS for frontend at port 3000
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://blog-frontend-1-3qng.onrender.com',
   credentials: true
 }));
 
