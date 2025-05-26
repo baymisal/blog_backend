@@ -37,7 +37,7 @@ myDB.sync({ alter: true })
   .then(() => console.log('Database & Tables Synced'))
   .catch(err => console.error(' Error syncing database:', err));
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.DB_PORT || 8000;
 app.listen(PORT, () => {
   console.log(` Server running on port ${PORT}`);
 });
