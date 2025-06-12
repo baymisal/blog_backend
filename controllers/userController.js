@@ -15,8 +15,8 @@ const registerUser = async (req, res) => {
         const newUser = await User.create({
             name,
             email,
-            password: await bcrypt.hash(password, 10),  // ✅ Hash password
-            role: role || 'Guest'  // ✅ Ensure role is stored correctly
+            password: await bcrypt.hash(password, 10),  // Hash password
+            role: role || 'Guest'  // Ensure role is stored correctly
         });
 
         res.status(201).json({
@@ -35,7 +35,7 @@ const registerUser = async (req, res) => {
 };
 
 
-// ✅ Login User
+// Login User
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;

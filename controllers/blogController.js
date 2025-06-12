@@ -1,5 +1,4 @@
-const Blog = require('../models/BlogModel');
-const User = require('../models/UserModel');
+const { Blog, User } = require('../models');
 
 // Create a new blog
 const createBlog = async (req, res) => {
@@ -23,6 +22,7 @@ const createBlog = async (req, res) => {
     }
 };
 
+// Get all blogs
 const getAllBlogs = async (req, res) => {
     try {
         const blogs = await Blog.findAll({
@@ -38,6 +38,7 @@ const getAllBlogs = async (req, res) => {
     }
 };
 
+// Get blog by ID
 const getBlogById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -57,6 +58,7 @@ const getBlogById = async (req, res) => {
     }
 };
 
+// Update blog
 const updateBlog = async (req, res) => {
     try {
         const { id } = req.params;
@@ -76,6 +78,7 @@ const updateBlog = async (req, res) => {
     }
 };
 
+// Delete blog
 const deleteBlog = async (req, res) => {
     try {
         const { id } = req.params;
@@ -96,8 +99,6 @@ module.exports = {
     updateBlog,
     deleteBlog
 };
-
-
 
 
 
